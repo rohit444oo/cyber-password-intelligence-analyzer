@@ -4,113 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Password Intelligence Analyzer</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<base target="_blank">
 </head>
-
 <body>
-
     <div class="container">
-
         <h1>🔐 Cyber Password Intelligence Analyzer</h1>
 
         <div class="input-box">
-
+            <label for="password" class="visually-hidden">Enter Secure Password</label>
             <input
                 type="password"
                 id="password"
                 placeholder="Enter Secure Password"
+                autocomplete="off"
+                spellcheck="false"
+                aria-describedby="strengthText"
             >
-
-            <button id="togglePassword">
-                <i class="fa-solid fa-eye"></i>
+            <button id="togglePassword" type="button" aria-label="Toggle password visibility">
+                <i class="fa-solid fa-eye" aria-hidden="true"></i>
             </button>
-
         </div>
 
-        <div class="strength-container">
+        <div class="strength-container" aria-live="polite" aria-atomic="true">
             <div class="strength-bar">
                 <div id="strengthFill"></div>
             </div>
-
             <p id="strengthText">Password Strength: -</p>
         </div>
-
+    
         <div class="stats">
+    <div class="card">
+        <h2>Entropy</h2>
+        <p id="entropy">0 bits</p>
+    </div>
 
-            <div class="card">
-                <h3>Entropy</h3>
-                <p id="entropy">0 bits</p>
-            </div>
+    <div class="card">
+        <h2>Estimated Crack Time</h2>
+        <p id="crackTime">-</p>
+    </div>
 
-            <div class="card">
-                <h3>Estimated Crack Time</h3>
-                <p id="crackTime">-</p>
-            </div>
+    <div class="card">
+    <h2>SHA-256 Hash</h2>
+    <p id="hashOutput">-</p>
+</div>
 
-        </div>
+    <div class="card">
+    <h2>Attack Resistance</h2>
+
+    <p id="dictionaryAttack"></p>
+    <p id="bruteAttack"></p>
+    <p id="rainbowAttack"></p>
+</div>
+    
+    <div class="card">
+        <h2>RTX 4090 Attack</h2>
+        <p id="gpuTime">-</p>
+    </div>
+</div>
 
         <div class="security-checks">
-
             <h2>Security Checklist</h2>
-
             <ul>
-
-                <li id="lengthCheck">
-                    ❌ Minimum 12 characters
-                </li>
-
-                <li id="upperCheck">
-                    ❌ Uppercase Letter
-                </li>
-
-                <li id="lowerCheck">
-                    ❌ Lowercase Letter
-                </li>
-
-                <li id="numberCheck">
-                    ❌ Number
-                </li>
-
-                <li id="specialCheck">
-                    ❌ Special Character
-                </li>
-
-                <li id="repeatCheck">
-                    ❌ No Repeated Characters
-                </li>
-
+                <li id="lengthCheck">❌ Minimum 12 characters</li>
+                <li id="upperCheck">❌ Uppercase Letter</li>
+                <li id="lowerCheck">❌ Lowercase Letter</li>
+                <li id="numberCheck">❌ Number</li>
+                <li id="specialCheck">❌ Special Character</li>
+                <li id="repeatCheck">❌ No Repeated Characters</li>
             </ul>
-
         </div>
 
         <div class="recommendations">
-
             <h2>Recommendations</h2>
-
             <ul id="recommendationList"></ul>
+        </div>
 
+        <div class="generator-settings">
+            <label for="lengthSlider">
+                Password Length: <span id="lengthValue">16</span>
+            </label>
+            <input
+                type="range"
+                id="lengthSlider"
+                min="8"
+                max="64"
+                value="16"
+            >
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="includeUpper" checked>
+                    Uppercase
+                </label>
+                <label>
+                    <input type="checkbox" id="includeLower" checked>
+                    Lowercase
+                </label>
+                <label>
+                    <input type="checkbox" id="includeNumbers" checked>
+                    Numbers
+                </label>
+                <label>
+                    <input type="checkbox" id="includeSymbols" checked>
+                    Symbols
+                </label>
+            </div>
+        </div>
+
+        <div class="policy-container">
+            <label for="policySelect">Security Policy</label>
+            <select id="policySelect">
+                <option value="personal">Personal</option>
+                <option value="enterprise">Enterprise</option>
+                <option value="banking">Banking</option>
+                <option value="government">Government</option>
+                <option value="military">Military</option>
+            </select>
+        </div>
+
+        <div class="compliance-cards">
+            <div class="card">
+                <h2>NIST Compliance</h2>
+                <p id="nistResult">FAIL</p>
+            </div>
+            <div class="card">
+                <h2>Breach Status</h2>
+                <p id="breachStatus">Unknown</p>
+            </div>
+        </div>
+
+        <div class="score-card" aria-live="polite" aria-atomic="true">
+            <h2>Security Score</h2>
+            <p id="securityLevel">Critical</p>
+            <p id="securityScore">0/100</p>
         </div>
 
         <div class="button-group">
-
-            <button id="generateBtn">
-                🎲 Generate Password
-            </button>
-
-            <button id="copyBtn">
-                📋 Copy Password
-            </button>
-
+            <button id="generateBtn" type="button">🎲 Generate Password</button>
+            <button id="copyBtn" type="button">📋 Copy Password</button>
+            <button id="exportBtn" type="button">📄 Export Report</button>
         </div>
-
     </div>
 
     <script src="common-passwords.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
