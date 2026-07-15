@@ -33,3 +33,10 @@ password-strength-checker/
 ├── script.js
 ├── common-passwords.js
 └── README.md
+
+## ▶️ How to Run
+
+1. Download or clone the repository.
+2. Open the project in VS Code.
+3. Open `index.html` with Live Server.
+4. Start analyzing passwords.
