@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#020617);
+    color:#ffffff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    background:rgba(15,23,42,0.95);
+    border:1px solid #00e5ff33;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 0 30px rgba(0,229,255,.15);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#00e5ff;
+}
+
+.input-box{
+    display:flex;
+    gap:10px;
+}
+
+#password{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+#togglePassword{
+    width:55px;
+    border:none;
+    border-radius:10px;
+    background:#00e5ff;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.strength-bar{
+    width:100%;
+    height:12px;
+    background:#334155;
+    border-radius:10px;
+    margin-top:20px;
+    overflow:hidden;
+}
+
+#strengthFill{
+    width:0%;
+    height:100%;
+    background:#ff0000;
+    transition:.4s;
+}
+
+#strengthText{
+    margin-top:12px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:25px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.card h3{
+    color:#00e5ff;
+    margin-bottom:10px;
+}
+
+.security-checks,
+.recommendations{
+    margin-top:25px;
+}
+
+.security-checks h2,
+.recommendations h2{
+    margin-bottom:15px;
+    color:#00e5ff;
+}
+
+.security-checks ul,
+.recommendations ul{
+    list-style:none;
+}
+
+.security-checks li,
+.recommendations li{
+    background:#1e293b;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:8px;
+}
+
+.button-group{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.button-group button{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#00e5ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.button-group button:hover{
+    transform:translateY(-2px);
+}
+
+@media(max-width:600px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+}
