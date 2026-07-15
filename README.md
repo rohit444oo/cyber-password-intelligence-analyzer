@@ -4,16 +4,21 @@ An advanced password security analyzer built using HTML, CSS, and JavaScript tha
 
 ## 🚀 Features
 
-- 🔒 Password Strength Meter
-- 📊 Entropy Calculation
-- ⏳ Crack Time Estimation
-- 🚨 Common Password Detection
-- 👁️ Show/Hide Password
-- 🎲 Secure Password Generator
-- 📋 Copy Password to Clipboard
-- ✅ Real-Time Security Checklist
-- 💡 Security Recommendations
-- 🛡️ Detection of Weak Password Patterns
+## Features
+
+- Password Strength Analysis
+- Entropy Calculation
+- Crack Time Estimation
+- SHA-256 Hash Generation
+- RTX 4090 Attack Simulation
+- Attack Resistance Matrix
+- NIST Compliance Check
+- Breach Detection
+- Enterprise Security Policies
+- Smart Password Generator
+- JSON Security Report Export
+- Personal Information Detection
+- Keyboard Pattern Detection
 
 ## 🛠️ Technologies Used
 
